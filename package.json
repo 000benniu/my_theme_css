@@ -1,0 +1,12 @@
+{
+  "main": "package.json",
+  "name": "my-theme-css",
+  "version": "1.0.0",
+  "description": "Theme CSS Client Extension",
+  "scripts": {
+    "build": "sass src/css/clay.scss dist/clay.css && sass src/css/main.scss dist/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

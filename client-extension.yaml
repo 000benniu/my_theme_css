@@ -1,0 +1,5 @@
+my-theme-css:
+    clayURL: https://000benniu.github.io/my_theme_css/dist/clay.css
+    mainURL: https://000benniu.github.io/my_theme_css/dist/main.css
+    name: My Theme CSS
+    type: themeCSS

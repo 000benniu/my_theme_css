@@ -1,0 +1,106 @@
+button,
+[type=button],
+[type=submit],
+[type=reset],
+[role=button],
+.btn,
+.nav-link,
+.page-link,
+select {
+  cursor: pointer;
+}
+
+button:disabled,
+[type=button]:disabled,
+[type=submit]:disabled,
+[role=button][aria-disabled=true],
+.btn.disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+
+.btn {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out, filter 0.15s ease-in-out;
+}
+
+.btn:not(:disabled):not(.disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.88);
+}
+.btn:not(:disabled):not(.disabled):active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  filter: brightness(0.82);
+  transition-duration: 0.05s;
+}
+.btn:not(:disabled):not(.disabled):focus-visible {
+  outline: 2px solid var(--primary, #BA0BAE);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-background-color, #738099);
+  border-color: var(--btn-primary-background-color, #738099);
+  color: var(--white, #FFE6E6);
+}
+.btn-primary:not(:disabled):not(.disabled):hover {
+  color: var(--white, #FFE6E6);
+}
+
+.btn-outline-primary {
+  border-color: var(--btn-outline-primary-border-color, #111D33);
+  color: var(--btn-outline-primary-border-color, #111D33);
+}
+.btn-outline-primary:not(:disabled):not(.disabled):hover {
+  background-color: var(--btn-outline-primary-border-color, #111D33);
+  color: var(--white, #FFE6E6);
+  filter: none;
+}
+
+.btn-link {
+  color: var(--btn-link-color, #2E4570);
+}
+.btn-link:not(:disabled):not(.disabled):hover {
+  color: var(--primary, #BA0BAE);
+  transform: none;
+  filter: none;
+  box-shadow: none;
+  text-decoration: underline;
+}
+.btn-link:not(:disabled):not(.disabled):active {
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+a:not(.btn):not([role=button]):not(.nav-link):not(.page-link) {
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
+}
+a:not(.btn):not([role=button]):not(.nav-link):not(.page-link):hover {
+  color: var(--primary, #BA0BAE);
+  text-decoration: underline;
+}
+a:not(.btn):not([role=button]):not(.nav-link):not(.page-link):focus-visible {
+  outline: 2px solid var(--primary, #BA0BAE);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm, 0.3rem);
+}
+
+.nav-link,
+.page-link {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.nav-link:hover:not(.disabled),
+.page-link:hover:not(.disabled) {
+  color: var(--primary, #BA0BAE);
+}
+.nav-link.active,
+.page-link.active {
+  color: var(--primary, #BA0BAE);
+}
+
+/*# sourceMappingURL=main.css.map */

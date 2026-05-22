@@ -1,0 +1,35 @@
+// =============================================================
+// _clay_variables.scss
+// Clay CSS SCSS 変数オーバーライド
+// StyleBook "MyStyleBook" のデザイントークンと同期させる
+// Style Book が実行時に CSS カスタムプロパティで上書きするため、
+// ここはビルド時のデフォルト値として機能する
+// =============================================================
+
+// --- Color ---
+$primary:   #BA0BAE;
+$secondary: #521417;
+$warning:   #2CE638;
+$white:     #FFE6E6;
+
+// --- Body ---
+$body-bg:    #FFD4D4;
+$body-color: #00008C;
+
+// --- Border Radius ---
+$border-radius:    0.5rem;
+$border-radius-sm: 0.3rem;
+$border-radius-lg: 0.9rem;
+
+// --- Links ---
+$link-color:       #2E4570;
+$link-hover-color: #BA0BAE; // = $primary
+
+// --- Button Primary (Clay: $btn-primary-bg) ---
+$btn-primary-bg:             #738099;
+$btn-primary-border:         #738099;
+$btn-primary-color:          #FFE6E6; // = $white
+
+// --- Button Outline Primary ---
+$btn-outline-primary-border: #111D33;
+$btn-outline-primary-color:  #111D33;

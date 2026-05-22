@@ -1,0 +1,30 @@
+node_modules/
+build/
+.gradle/
+
+# dist/ は GitHub Pages 配信のため git 管理対象にする
+# dist/
+
+# ソースマップは配信不要
+dist/*.map
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local

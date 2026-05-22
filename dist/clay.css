@@ -1,0 +1,29 @@
+:root {
+  --primary: #BA0BAE;
+  --secondary: #521417;
+  --warning: #2CE638;
+  --white: #FFE6E6;
+  --body-bg: #FFD4D4;
+  --body-color: #00008C;
+  --border-radius: 0.5rem;
+  --border-radius-sm: 0.3rem;
+  --border-radius-lg: 0.9rem;
+  --border-radius-circle: 100%;
+  --btn-primary-background-color: #738099;
+  --btn-outline-primary-border-color: #111D33;
+  --btn-link-color: #2E4570;
+  --spacer-1: 0.2rem;
+  --spacer-2: 0.4rem;
+  --spacer-3: 0.6rem;
+  --spacer-4: 0.8rem;
+  --spacer-5: 1.2rem;
+  --spacer-6: 1.5rem;
+  --spacer-7: 3rem;
+  --spacer-8: 5rem;
+  --spacer-9: 7rem;
+  --spacer-10: 9rem;
+  --container-max-sm: 660px;
+  --container-max-md: 990px;
+}
+
+/*# sourceMappingURL=clay.css.map */

@@ -1,0 +1,169 @@
+// =============================================================
+// _custom.scss — カスタムスタイル（主な編集対象）
+//
+// ルール:
+//   - 色・フォントは必ず var() で参照する（ハードコード禁止）
+//   - ハードコートすると Style Book が上書きできなくなる
+//   - var() のフォールバックには $clay_variables の SCSS 変数を使う
+//
+//   例:  color: var(--primary, #{$primary});
+// =============================================================
+
+
+// =============================================================
+// 1. ベース — インタラクティブ要素の cursor 強制
+// =============================================================
+
+// cursor: pointer を徹底する（Clay CSS が抜けているケース補完）
+button,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[role="button"],
+.btn,
+.nav-link,
+.page-link,
+select {
+  cursor: pointer;
+}
+
+// disabled は not-allowed（pointer-events: auto で維持）
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[role="button"][aria-disabled="true"],
+.btn.disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+
+
+// =============================================================
+// 2. ボタン共通 — hover / active / focus のリアクション
+// =============================================================
+
+.btn {
+  // 色変化・影・浮き上がりをまとめてトランジション
+  transition:
+    color            0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color     0.15s ease-in-out,
+    box-shadow       0.15s ease-in-out,
+    transform        0.15s ease-in-out,
+    filter           0.15s ease-in-out;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    filter: brightness(0.88);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    filter: brightness(0.82);
+    transition-duration: 0.05s;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--primary, #{$primary});
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+}
+
+
+// =============================================================
+// 3. ボタン種別ごとの個別調整
+// =============================================================
+
+// Primary — StyleBook の --btn-primary-background-color を適用
+.btn-primary {
+  background-color: var(--btn-primary-background-color, #{$btn-primary-bg});
+  border-color:     var(--btn-primary-background-color, #{$btn-primary-bg});
+  color:            var(--white, #{$white});
+
+  // hover 時は filter:brightness で暗くするので追加指定不要
+  // outline hover 時は文字色が変わらないよう維持
+  &:not(:disabled):not(.disabled):hover {
+    color: var(--white, #{$white});
+  }
+}
+
+// Outline Primary — hover でソリッドに変化
+.btn-outline-primary {
+  border-color: var(--btn-outline-primary-border-color, #{$btn-outline-primary-border});
+  color:        var(--btn-outline-primary-border-color, #{$btn-outline-primary-border});
+
+  &:not(:disabled):not(.disabled):hover {
+    background-color: var(--btn-outline-primary-border-color, #{$btn-outline-primary-border});
+    color:            var(--white, #{$white});
+    // ソリッド化するので brightness は打ち消す
+    filter: none;
+  }
+}
+
+// Link-type button — 浮き・影は不要、色変化のみ
+.btn-link {
+  color: var(--btn-link-color, #{$link-color});
+
+  &:not(:disabled):not(.disabled) {
+    &:hover {
+      color:     var(--primary, #{$primary});
+      transform: none;
+      filter:    none;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    &:active {
+      transform: none;
+      filter:    none;
+      box-shadow: none;
+    }
+  }
+}
+
+
+// =============================================================
+// 4. リンク — hover / focus のリアクション
+// =============================================================
+
+// 通常リンク（ボタン・ナビ以外）
+a:not(.btn):not([role="button"]):not(.nav-link):not(.page-link) {
+  cursor: pointer;
+  transition:
+    color                  0.15s ease-in-out,
+    text-decoration-color  0.15s ease-in-out;
+
+  &:hover {
+    color: var(--primary, #{$primary});
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline:        2px solid var(--primary, #{$primary});
+    outline-offset: 2px;
+    border-radius:  var(--border-radius-sm, #{$border-radius-sm});
+  }
+}
+
+// ナビゲーションリンク（.nav-link / .page-link）
+.nav-link,
+.page-link {
+  transition:
+    color            0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color     0.15s ease-in-out;
+
+  &:hover:not(.disabled) {
+    color: var(--primary, #{$primary});
+  }
+
+  &.active {
+    color: var(--primary, #{$primary});
+  }
+}

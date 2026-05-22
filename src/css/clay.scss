@@ -1,0 +1,46 @@
+// =============================================================
+// clay.scss — clay.css エントリーポイント
+// Liferay Clay CSS の CSS カスタムプロパティをオーバーライドする
+// Style Book が実行時にこれらの値を上書きする
+// =============================================================
+
+@import 'clay_variables';
+
+:root {
+  // Colors
+  --primary:       #{$primary};
+  --secondary:     #{$secondary};
+  --warning:       #{$warning};
+  --white:         #{$white};
+
+  // Body
+  --body-bg:       #{$body-bg};
+  --body-color:    #{$body-color};
+
+  // Border Radius
+  --border-radius:        #{$border-radius};
+  --border-radius-sm:     #{$border-radius-sm};
+  --border-radius-lg:     #{$border-radius-lg};
+  --border-radius-circle: 100%;
+
+  // Buttons
+  --btn-primary-background-color:    #{$btn-primary-bg};
+  --btn-outline-primary-border-color: #{$btn-outline-primary-border};
+  --btn-link-color:                  #{$link-color};
+
+  // Spacers
+  --spacer-1:  0.2rem;
+  --spacer-2:  0.4rem;
+  --spacer-3:  0.6rem;
+  --spacer-4:  0.8rem;
+  --spacer-5:  1.2rem;
+  --spacer-6:  1.5rem;
+  --spacer-7:  3rem;
+  --spacer-8:  5rem;
+  --spacer-9:  7rem;
+  --spacer-10: 9rem;
+
+  // Containers
+  --container-max-sm: 660px;
+  --container-max-md: 990px;
+}
