@@ -116,7 +116,6 @@ button:disabled,
       transform: none;
       filter:    none;
       box-shadow: none;
-      text-decoration: underline;
     }
 
     &:active {
@@ -135,13 +134,10 @@ button:disabled,
 // 通常リンク（ボタン・ナビ以外）
 a:not(.btn):not([role="button"]):not(.nav-link):not(.page-link) {
   cursor: pointer;
-  transition:
-    color                  0.15s ease-in-out,
-    text-decoration-color  0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
 
-  &:hover {
-    color: var(--primary, #{$primary});
-    text-decoration: underline;
+  &:visited {
+    color: inherit;
   }
 
   &:focus-visible {
